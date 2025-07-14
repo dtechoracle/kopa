@@ -131,9 +131,6 @@ export default function LandingPage() {
       <section className="px-4 py-12 md:py-20 bg-gradient-to-br from-purple-50 to-white">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-8">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#6B4EFF] rounded-3xl mx-auto mb-6 flex items-center justify-center">
-              <span className="text-white text-2xl md:text-3xl font-bold">K</span>
-            </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Manage Your
               <span className="text-[#6B4EFF] block md:inline"> Rotational Savings</span>
@@ -159,6 +156,89 @@ export default function LandingPage() {
               <span>Sign Up</span>
               <Download className="w-4 h-4 md:w-5 md:h-5" />
             </button>
+          </div>
+
+          {/* Dashboard Preview */}
+          <div className="mb-8 md:mb-12">
+            <div className="relative max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 border border-gray-200">
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-[#6B4EFF] rounded-xl flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">K</span>
+                      </div>
+                      <span className="text-lg font-semibold text-gray-900">Kopa</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                      <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div className="bg-white rounded-xl p-4 border border-gray-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm text-gray-600">Active Groups</span>
+                        <span className="text-lg font-bold text-[#6B4EFF]">3</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-[#6B4EFF] h-2 rounded-full" style={{width: '75%'}}></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-4 border border-gray-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm text-gray-600">Total Savings</span>
+                        <span className="text-lg font-bold text-green-600">₦2.5M</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{width: '60%'}}></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-xl p-4 border border-gray-200">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm text-gray-600">Members</span>
+                        <span className="text-lg font-bold text-purple-600">24</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{width: '85%'}}></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-4 border border-gray-200">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-semibold text-gray-900">Recent Groups</h3>
+                      <span className="text-sm text-gray-500">View all</span>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                          <div className="font-medium text-gray-900">Family Savings</div>
+                          <div className="text-sm text-gray-500">8 members • ₦50K/month</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm font-semibold text-[#6B4EFF]">Round 2/8</div>
+                          <div className="text-xs text-gray-500">Next: Jan 15</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                          <div className="font-medium text-gray-900">Business Partners</div>
+                          <div className="text-sm text-gray-500">5 members • ₦100K/week</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm font-semibold text-[#6B4EFF]">Round 1/5</div>
+                          <div className="text-xs text-gray-500">Next: Jan 8</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Stats */}
@@ -305,7 +385,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white px-4 py-8 md:py-12">
+      <footer className="bg-white text-gray-900 px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
             <div>
@@ -315,40 +395,40 @@ export default function LandingPage() {
                 </div>
                 <span className="text-xl font-bold">Kopa</span>
               </div>
-              <p className="text-gray-400 text-sm md:text-base">
+              <p className="text-gray-600 text-sm md:text-base">
                 The modern way to manage rotational savings groups.
               </p>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4 text-sm md:text-base">Product</h3>
-              <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
+              <ul className="space-y-2 text-gray-600 text-sm md:text-base">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Features</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Security</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4 text-sm md:text-base">Support</h3>
-              <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <ul className="space-y-2 text-gray-600 text-sm md:text-base">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4 text-sm md:text-base">Company</h3>
-              <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <ul className="space-y-2 text-gray-600 text-sm md:text-base">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Careers</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400 text-sm md:text-base">
+          <div className="border-t border-gray-200 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-500 text-sm md:text-base">
             <p>&copy; 2024 Kopa. All rights reserved.</p>
           </div>
         </div>
