@@ -78,13 +78,13 @@ export default function LandingPage() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="text-gray-600 hover:text-gray-900 font-medium"
             >
               Sign In
             </button>
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="bg-[#6B4EFF] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#5A3FD9] transition-colors"
             >
               Get Started
@@ -106,7 +106,7 @@ export default function LandingPage() {
             <div className="flex flex-col space-y-3">
               <button
                 onClick={() => {
-                  router.push('/(auth)')
+                  router.push('/auth')
                   setMobileMenuOpen(false)
                 }}
                 className="text-gray-600 hover:text-gray-900 font-medium py-2"
@@ -115,7 +115,7 @@ export default function LandingPage() {
               </button>
               <button
                 onClick={() => {
-                  router.push('/(auth)')
+                  router.push('/auth')
                   setMobileMenuOpen(false)
                 }}
                 className="bg-[#6B4EFF] text-white px-4 py-2 rounded-xl font-medium hover:bg-[#5A3FD9] transition-colors"
@@ -146,14 +146,14 @@ export default function LandingPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 md:mb-12 px-4">
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="bg-[#6B4EFF] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-[#5A3FD9] transition-all duration-200 transform hover:scale-105 flex items-center justify-center space-x-2"
             >
               <span>Start Managing Groups</span>
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="border-2 border-[#6B4EFF] text-[#6B4EFF] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-[#6B4EFF] hover:text-white transition-all duration-200 flex items-center justify-center space-x-2"
             >
               <span>Sign Up</span>
@@ -289,13 +289,13 @@ export default function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="bg-white text-[#6B4EFF] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-gray-50 transition-all duration-200 transform hover:scale-105"
             >
               Get Started Free
             </button>
             <button
-              onClick={() => router.push('/(auth)')}
+              onClick={() => router.push('/auth')}
               className="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-white hover:text-[#6B4EFF] transition-all duration-200"
             >
               Sign Up Free
