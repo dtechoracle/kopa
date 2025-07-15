@@ -10,6 +10,7 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<void>
   signUp: (email: string, password: string, name: string) => Promise<void>
   signOut: () => Promise<void>
+  signInWithDemo: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -70,8 +71,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (error) throw error
   }
 
+  const signInWithDemo = async () => {
+    // Create a demo user object
+    const demoUser: User = {
+      id: 'demo-user-id',
+      email: 'demo@kopa.com',
+      user_metadata: {
+        name: 'Demo User',
+      },
+      app_metadata: {},
+      aud: 'authenticated',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }
+
+    // Set the demo user without actually signing in to Supabase
+    setUser(demoUser)
+  }
+
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, signInWithDemo }}>
       {children}
     </AuthContext.Provider>
   )

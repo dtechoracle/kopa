@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation'
-import { Eye, EyeOff, Mail, Lock, User, Phone, ArrowLeft } from 'lucide-react'
+import { Eye, EyeOff, Mail, Lock, User, Phone, ArrowLeft, Play } from 'lucide-react'
 
 export default function OnboardingPage() {
   const [isLogin, setIsLogin] = useState(true)
@@ -15,7 +15,7 @@ export default function OnboardingPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const { signIn, signUp } = useAuth()
+  const { signIn, signUp, signInWithDemo } = useAuth()
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,6 +29,20 @@ export default function OnboardingPage() {
       } else {
         await signUp(email, password, name)
       }
+      router.push('/dashboard')
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleDemoLogin = async () => {
+    setLoading(true)
+    setError('')
+    
+    try {
+      await signInWithDemo()
       router.push('/dashboard')
     } catch (err: any) {
       setError(err.message)
@@ -172,6 +186,31 @@ export default function OnboardingPage() {
               </button>
             </div>
           )}
+        </div>
+
+        {/* Demo Login Section */}
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">Or</span>
+            </div>
+          </div>
+          
+          <button
+            onClick={handleDemoLogin}
+            disabled={loading}
+            className="mt-4 w-full flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-xl transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <Play className="w-4 h-4" />
+            <span>Try Demo Mode</span>
+          </button>
+          
+          <p className="text-xs text-gray-500 text-center mt-2">
+            Experience the app with sample data
+          </p>
         </div>
 
         {/* Features */}
